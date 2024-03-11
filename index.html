@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <link rel="shortcut icon" href="https://lasmatesdivertidas.files.wordpress.com/2013/04/numeros.gif">
+
+
+    <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Tabuada </title>
+</head>
+<body>
+
+    <div id="container" data-aos="fade-right"
+    data-aos-offset="300"
+    data-aos-easing="ease-in-sine">
+        <h2> Gerador de Tabuada</h2>
+        <input type="number" id="numInput" placeholder="Digite um Número">
+        <button onclick="geradorTabuada()"> Gerar Tabuada </button>
+        <div id="tabuada"></div>
+    </div>
+
+    <script>
+        function geradorTabuada(){
+            var numInput = document.getElementById("numInput").value;
+            var tabuadaDiv = document.getElementById("tabuada");
+            tabuadaDiv.innerHTML = "";
+
+            if (!numInput || isNaN(numInput)){
+                tabuadaDiv.innerHTML = "<p>Por favor, insira um número válido. </p>";
+                return;
+            }
+
+            var tableHTML = "<h3>Tabuada de " + numInput + "</h3><table border='1'> <tr></tr> <th>Número</th> <th>Resultado</th> </tr>";
+
+            for (var i = 1; i <= 10; i++){
+                tableHTML += "<tr><td>" + numInput + " x " + i + "</td><td>" + (numInput * i) + "</td></tr>";
+            }
+
+            tableHTML += "</table>"
+            tabuadaDiv.innerHTML = tableHTML;
+
+
+        }
+
+
+    </script>
+
+
+<div class="img">
+    <img src="https://i.pinimg.com/originals/54/02/d5/5402d50b628eeada5d57d812134d971c.gif" alt="">
+</div>
+
+<div class="img2">
+    <img src="https://i.pinimg.com/originals/b1/eb/13/b1eb132eb3e98dacab49d108569f7a59.gif" alt="">
+</div>
+
+
+<footer> Desenvolvido por Eduarda Souza | &real;| Instituto da Oportunidade Social</footer>
+
+<script>
+  AOS.init();
+</script>
+
+    
+</body>
+</html>
